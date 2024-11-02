@@ -28,7 +28,7 @@ const Banner = () => {
             <span className="flex items-center w-full  absolute top-2 gap-10 text-white banner-text ">
                 {
                     data.map((item,i) => (
-                     <p className=" flex items-center gap-10 min-w-[340px]  poppins-regular " key={i}>{item.content} {item.hasCode?<span className="bg-green-500 rounded-lg px-1 py-1 text-sm">{item.code}</span>:""}<TiWeatherCloudy/></p>
+                     <p className=" flex items-center gap-10 min-w-[390px]  poppins-regular " key={i}>{item.content} {item.hasCode?<span className="bg-green-500 rounded-lg px-1 py-1 text-sm">{item.code}</span>:""}<TiWeatherCloudy/></p>
                     ))
                 }
             </span>
