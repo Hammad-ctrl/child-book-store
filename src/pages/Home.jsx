@@ -1,6 +1,7 @@
 import React from 'react'
 import ImageGallery from "react-image-gallery";
 /* react scroll image gallery  */
+import '../assets/imageGallery.css'
 import { IoIosStar } from "react-icons/io";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -61,7 +62,7 @@ const Home = () => {
             {/* info about the single book  */}
             <div className=" w-[85%] mx-auto single-book flex flex-col sm:flex-row gap-2 h-full">
                 <div className="left-image-gallery w-[100%] min-h-[100%] sm:w-[65%] md:w[55%]">
-                    <ImageGallery  thumbnailPosition='left' lazyLoad items={images} />
+                    <ImageGallery  thumbnailPosition='left' lazyLoad items={images} showFullscreenButton={false}/>
                 </div>
                 <div className='book-details flex-1 flex items-center  flex-col'>
                     <h3 className='text-2xl poppins-medium'>Where are You?</h3>
