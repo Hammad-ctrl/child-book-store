@@ -30,7 +30,7 @@ const Home = () => {
         {
             renderItem: () => (
                 <div className="video-wrapper">
-                    <video controls width="100%" height="100%" className='h-[561px]' loop>
+                    <video controls width="100%" height="100%" className='sm:h-[561px]' loop>
                         <source src="https://res.cloudinary.com/cxproduct-prod/video/upload/v1/where-are-you/15lpjwwl6bapugnweujwqa.webm?_a=DATAdtAAZAA0"  type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
