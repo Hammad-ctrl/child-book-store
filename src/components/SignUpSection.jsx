@@ -18,7 +18,7 @@ const SignUpSection = () => {
 
       {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 w-full flex overflow-hidden leading-none transform translate-y-1/2">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(60)].map((_, i) => (
           <svg
             key={i}
             viewBox="0 0 640 100"
