@@ -266,7 +266,7 @@ const Home = () => {
             <div className="signup-section ">
                 <SignUpSection />
             </div>
-            <div className="footer">
+            <div className="footer w-full">
                 <Footer/>
             </div>
         </div>
