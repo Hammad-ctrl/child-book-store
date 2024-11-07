@@ -1,58 +1,9 @@
 // src/components/Preloader.js
 import React, { useEffect, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
 
-// Keyframes for animations
-const bounce = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-`;
-
-const Container = styled.div`
-  font-family: 'Nalieta', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #FFEBCC;
-  color: #FF6B6B;
-`;
-
-const BookStack = styled.div`
-  display: flex;
-  gap: 10px;
-`;
-
-const Book = styled.div`
-  width: 20px;
-  height: 40px;
-  background-color: #${props => props.color};
-  animation: ${bounce} 1s ease-in-out infinite;
-  animation-delay: ${props => props.delay}s;
-  border-radius: 4px;
-`;
-
-const Text = styled.p`
-  font-size: 1.5em;
-  margin-top: 20px;
-`;
-
-const ProgressBarContainer = styled.div`
-  margin-top: 20px;
-  width: 80%;
-  height: 8px;
-  background-color: #ddd;
-  border-radius: 4px;
-`;
-
-const ProgressBar = styled.div`
-  height: 100%;
-  width: ${props => props.width}%;
-  background-color: #FF6B6B;
-  border-radius: 4px;
-  transition: width 0.3s ease;
-`;
+const bounceDelayStyle = (delay) => ({
+  animationDelay: `${delay}s`,
+});
 
 const Preloader = () => {
   const [progress, setProgress] = useState(0);
@@ -67,20 +18,40 @@ const Preloader = () => {
         return oldProgress + 10;
       });
     }, 500);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <Container>
-      <BookStack>
-        <Book color="FFB6C1" delay={0} />
-        <Book color="FF6B6B" delay={0.2} />
-        <Book color="FFD700" delay={0.4} />
-      </BookStack>
-      <Text>Loading your adventure...</Text>
-      <ProgressBarContainer>
-        <ProgressBar width={progress} />
-      </ProgressBarContainer>
-    </Container>
+    <div className="flex flex-col items-center justify-center h-screen bg-[#FFEBCC] text-[#FF6B6B] font-nalieta">
+      {/* Book Stack */}
+      <div className="flex gap-3">
+        <div
+          className="w-5 h-12 bg-[#FFB6C1] rounded-md shadow-lg transform animate-bounce"
+          style={{ ...bounceDelayStyle(0), boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)' }}
+        ></div>
+        <div
+          className="w-5 h-12 bg-[#FF6B6B] rounded-md shadow-lg transform animate-bounce"
+          style={{ ...bounceDelayStyle(0.2), boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)' }}
+        ></div>
+        <div
+          className="w-5 h-12 bg-[#FFD700] rounded-md shadow-lg transform animate-bounce"
+          style={{ ...bounceDelayStyle(0.4), boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)' }}
+        ></div>
+      </div>
+
+      {/* Loading Text */}
+      <p className="mt-6 text-2xl font-semibold tracking-wide text-[#FF6B6B]">
+        Loading your adventure...
+      </p>
+
+      {/* Progress Bar */}
+      <div className="relative mt-6 w-3/4 h-4 bg-gray-300 rounded-full overflow-hidden">
+        <div
+          className="absolute inset-0 h-full rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#FFB6C1] transition-all duration-300"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+    </div>
   );
 };
 
