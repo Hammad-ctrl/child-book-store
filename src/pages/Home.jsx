@@ -62,10 +62,10 @@ const Home = () => {
             {/* info about the single book  */}
             <div className=" w-[85%] mx-auto single-book flex flex-col sm:flex-row gap-2 h-full" style={{ fontFamily: 'Swansea' }}>
                 <div className="left-image-gallery w-[100%] min-h-[100%] sm:w-[65%] md:w[55%]">
-                    <ImageGallery thumbnailPosition='bottom' lazyLoad items={images} showFullscreenButton={false} />
+                    <ImageGallery thumbnailPosition='left' lazyLoad items={images} showFullscreenButton={false} />
                 </div>
                 <div className='book-details flex-1 flex items-center  flex-col'>
-                    <h3 className="text-4xl font-medium text-[#09015d]" style={{ fontFamily: 'Nalieta' }}>
+                    <h3 className="text-5xl font-semibold track text-[#09015d]" style={{ fontFamily: 'Nalieta' }}>
                         Where are You?
                     </h3>
                     <div className="rating poppins-regular flex items-center gap-3 mb-3">
@@ -86,12 +86,12 @@ const Home = () => {
                     <div className="book-description">
                         <p className='p-2' >Gift a world of inspiration with our personalized book that speaks directly to your child! Their name and the characteris the center stage. Like a planted seed, this book quietly nurtures their inner dreamer,  fostering a spirit of courage and imagination as they grow.</p>
                     </div>
-                    <div className="book-subinfo flex flex-col  self-start mt-3">
-                        <p className='flex  gap-3 px-2'><FaRegHeart size={25} />Uploading photo is available inside our book.</p>
-                        <p className='flex  gap-3 px-2'><IoMdBook size={25} />Flip through all pages before you buy.</p>
-                        <p className='flex  gap-3 px-2'><CiGift size={25} />Encourage childs reading habit and curiosty. </p>
-                        <p className='flex  gap-3 px-2'><CiGlobe size={25} />Printed and ready to send in 2-3 business days.</p>
-                    </div>
+                    <ul className="book-subinfo" style={{ listStyleType: 'disc' }}>
+                        <li className='  gap-3 px-2'>Uploading photo is available inside our book.</li>
+                        <li className='gap-3 px-2'>Flip through all pages before you buy.</li>
+                        <li className=' gap-3 px-2'>Encourage childs reading habit and curiosty. </li>
+                        <li className='gap-3 px-2'>Printed and ready to send in 2-3 business days.</li>
+                    </ul>
                     <div className="book-price self-start mt-5 px-2">
                         <p className='poppins-semibold text-xl text-amber-950'>$44.99 USD</p>
                     </div>
@@ -110,7 +110,7 @@ const Home = () => {
                         </select>
                     </div>
                     <div className="button-pry mt-3 w-full poppins-regular ">
-                        <button className='w-full rounded-md p-3 bg-black hover:bg-white box-border hover:text-black hover:border transition-all text-white'>Personalized now</button>
+                        <button className='w-full rounded-md p-3 bg-black hover:bg-white box-border hover:text-black hover:border transition-all text-white' style={{ fontFamily: 'Coolvetica' }} >Personalized Now</button>
                     </div>
                     <div className="options-payment p-2 flex items-center gap-2">
                         <p className="flex items-center gap-2">
