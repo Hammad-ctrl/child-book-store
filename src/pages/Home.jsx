@@ -65,7 +65,7 @@ const Home = () => {
                     <ImageGallery thumbnailPosition='left' lazyLoad items={images} showFullscreenButton={false} />
                 </div>
                 <div className='book-details flex-1 flex items-center  flex-col'>
-                    <h3 className="text-2xl font-medium text-[#09015d]" style={{ fontFamily: 'Nalieta' }}>
+                    <h3 className="text-4xl font-medium text-[#09015d]" style={{ fontFamily: 'Nalieta' }}>
                         Where are You?
                     </h3>
                     <div className="rating poppins-regular flex items-center gap-3 mb-3">
