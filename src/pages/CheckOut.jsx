@@ -185,7 +185,7 @@ const nextGeneralStep =()=>{
             <div className="manageSteps flex items-center justify-center">
             <div className="flex gap-2 mt-2 mb-2">
                     {[1, 2, 3, 4].map((step,i) => (
-                        <div key={step} className={`text-sm p-1 flex items-center gap-1 transition-all   ${step === currentStep ? ' underline text-gray-900' : 'text-gray-400'}`}>{i==0 && "Name"}{i==1 && "Skin Tone "}{i==2 && "Hair"} {i==3 && "Parents Name"} <FaLongArrowAltRight /></div>
+                        <div key={step} className={`text-sm p-1 flex items-center gap-1 transition-all   ${step === currentStep ? ' underline text-gray-900' : 'text-gray-400'}`}>{i==0 && "Name"}{i==1 && "Skin Tone "}{i==2 && "Hair"} {i==3 && "Parents Name"} <span className=' hidden sm:flex'><FaLongArrowAltRight /></span></div>
                     ))}
                 </div>
             </div>
