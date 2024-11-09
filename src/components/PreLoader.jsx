@@ -17,7 +17,7 @@ const Preloader = () => {
         }
         return oldProgress + 10;
       });
-    }, 500);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
