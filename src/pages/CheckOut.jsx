@@ -226,7 +226,7 @@ const nextGeneralStep =()=>{
     };
 
     return (
-        <div className='checkoutpage w-full bg-[#FDF8F1] h-full kanit'>
+        <div className='checkoutpage w-full bg-[#FDF8F1] min-h-screen kanit'>
             {/* Static Top Bar */}
             <div className="top-bar w-full h-12 bg-[#23231e] relative flex items-center justify-center">
                 <h2 className='text-white text-xl'>Where are You?</h2>
