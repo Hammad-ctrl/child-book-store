@@ -60,13 +60,13 @@ const Book = () => {
 
                 {/* Display First Image Always */}
                 <div className="image-container">
-                    <img src={images[0].url} width={290} alt="Book preview 1" />
+                    <img src={images[0].url} width={290} className='shadow-lg shadow-gray-600 rounded-sm' alt="Book preview 1" />
                 </div>
 
                 {/* Conditional display of remaining images based on selected view */}
-                <div className={`images grid gap-5 ${selectedOption === "multi" ? "grid-cols-2" : "grid-cols-1"}`}>
+                <div className={`images mb-20 grid gap-1 ${selectedOption === "multi" ? "grid-cols-2" : "grid-cols-1"}`}>
                     {images.slice(1).map((image, i) => (
-                        <img key={i} src={image.url} width={290} alt={`Book preview ${i + 2}`} />
+                        <img key={i} src={image.url} className=' shadow-lg shadow-gray-600 rounded-sm' width={290} alt={`Book preview ${i + 2}`} />
                     ))}
                 </div>
                 <div className='fixed  bottom-0 h-28 w-[100vw] bg-white'>
