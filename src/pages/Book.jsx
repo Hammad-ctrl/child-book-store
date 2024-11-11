@@ -64,7 +64,7 @@ const Book = () => {
                 </div>
 
                 {/* Conditional display of remaining images based on selected view */}
-                <div className={`image-container1 mb-20 grid  ${selectedOption === "multi" ? "grid-cols-2 " : "grid-cols-1 gap-4"}`}>
+                <div className={`image-container1 mb-36 grid  ${selectedOption === "multi" ? "grid-cols-2 " : "grid-cols-1 gap-4"}`}>
                     {images.slice(1).map((image, i) => (
                         <div className={`${i%2 == 0 ?"img-container":"img-container2"}`}>
                             <img key={i} src={image.url} className='image-inside shadow-lg shadow-gray-600' width={290} alt={`Book preview ${i + 2}`} />
